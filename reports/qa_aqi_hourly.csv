@@ -1,0 +1,10 @@
+rule,num_flagged,total_rows,percent,description,action,dataset,level
+flag_missing_pollutants,0,8760,0.0,Missing key pollutant values,Keep these rows flagged and review manually,air_quality,hourly
+flag_negative_values,0,8760,0.0,Negative readings that are not physically valid,Replace by 0 or interpolate around them,air_quality,hourly
+flag_pm25_exceeds_pm10,4,8760,0.05,PM2.5 measured higher than PM10,Auto-cap PM2.5 by median (pm2.5/pm10); keep flag for traceability,air_quality,hourly
+flag_uv_negative,0,8760,0.0,Negative UV index values,Replace negative values by 0,air_quality,hourly
+flag_uv_out_of_range,0,8760,0.0,UV index outside the physical 0-15 range,"Investigate instrument issues; clip to [0, 15] if confirmed valid",air_quality,hourly
+flag_pm25_out_of_range,0,8760,0.0,PM2.5 outside the physical 0-500 µg/m³ range,"Investigate sensor calibration; clip to [0, 500] if confirmed valid",air_quality,hourly
+flag_pm10_out_of_range,0,8760,0.0,PM10 outside the physical 0-1000 µg/m³ range,"Investigate sensor calibration; clip to [0, 1000] if confirmed valid",air_quality,hourly
+flag_duplicate_timestamp,0,8760,0.0,Duplicate timestamps in the time series,Keep the first record for each timestamp,air_quality,hourly
+flag_hour_gap,0,8760,0.0,Time gap larger than one hour between rows,Keep flagged and mention gaps in the analysis notes,air_quality,hourly

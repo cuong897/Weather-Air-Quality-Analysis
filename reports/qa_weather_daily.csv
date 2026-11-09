@@ -1,0 +1,13 @@
+rule,num_flagged,total_rows,percent,description,action,dataset,level
+flag_missing_temps,0,365,0.0,Missing temperature values,Keep flagged; review in analysis/report,weather,daily
+flag_missing_precip,0,365,0.0,Missing precipitation,Keep flagged; review in analysis/report,weather,daily
+flag_missing_wind,0,365,0.0,Missing wind speed,Keep flagged; review in analysis/report,weather,daily
+flag_missing_pressure,0,365,0.0,Missing pressure,Keep flagged; review in analysis/report,weather,daily
+flag_invalid_tmin_tmax_relation,0,365,0.0,Minimum temperature greater than maximum,Keep flagged; review in analysis/report,weather,daily
+flag_invalid_tavg_out_of_range,0,365,0.0,Average temperature outside min–max range,Keep flagged; review in analysis/report,weather,daily
+flag_extreme_temperature,0,365,0.0,"Temperature outside realistic range (-80, 60)",Keep flagged; review in analysis/report,weather,daily
+flag_negative_precipitation,0,365,0.0,Negative precipitation is invalid,Keep flagged; review in analysis/report,weather,daily
+flag_negative_wind_speed,0,365,0.0,Negative wind speed,Keep flagged; review in analysis/report,weather,daily
+flag_pressure_outlier,0,365,0.0,Pressure outside 870–1100 hPa,Keep flagged; review in analysis/report,weather,daily
+flag_duplicate_timestamp,0,365,0.0,Duplicate timestamps in the time series,Keep flagged; review in analysis/report,weather,daily
+flag_day_gap,0,365,0.0,Time gap larger than one day,Keep flagged; review in analysis/report,weather,daily

@@ -1,0 +1,19 @@
+Indicator,Purpose,Formula,Unit,Threshold
+temp_mean,Average daily temperature,mean(tavg),°C,N/A
+temp_p50,Median (p50) of daily temperature,"quantile(tavg, 0.5)",°C,N/A
+temp_p95,95th percentile of daily temperature,"quantile(tavg, 0.95)",°C,>32°C (extreme heat)
+temp_min,Minimum daily temperature,min(tmin),°C,<10°C (cold)
+temp_max,Maximum daily temperature,max(tmax),°C,>40°C (danger)
+rain_total_mm,Total rainfall in the period,sum(prcp),mm,>100mm (heavy rain)
+rain_days_ge1mm,Number of rainy days ≥1mm,count(prcp ≥ 1),days,>10 days (wet month)
+wind_mean_kmh,Average wind speed,mean(wspd),km/h,>50 km/h (strong wind)
+pressure_mean_hPa,Average pressure,mean(pres),hPa,<1000 hPa (low pressure)
+pressure_std_hPa,Standard deviation of pressure,std(pres),hPa,>5 hPa (unstable)
+pm25_mean,Mean of daily PM2.5,mean(pm2_5),µg/m³,>15 µg/m³ (WHO annual)
+pm25_p95,95th percentile of daily PM2.5,"quantile(pm2_5, 0.95)",µg/m³,>25 µg/m³ (WHO 24h limit)
+pm25_days_exceed,Number of days with PM2.5 above 25 µg/m³,count(pm2_5 > 25),days,>7 days/month (poor AQI)
+pm10_mean,Mean of daily PM10,mean(pm10),µg/m³,>45 µg/m³ (WHO annual)
+pm10_p95,95th percentile of daily PM10,"quantile(pm10, 0.95)",µg/m³,>50 µg/m³ (WHO 24h limit)
+pm10_days_exceed,Number of days with PM10 above 50 µg/m³,count(pm10 > 50),days,>7 days/month (poor AQI)
+uv_mean,Average daily UV index,mean(uv_index_max),index,>6 (high UV)
+uv_max_daily,Maximum daily clear-sky UV index,max(uv_index_clear_sky_max),index,>11 (extreme UV)
